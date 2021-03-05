@@ -1,6 +1,6 @@
 import React from 'react'
 import Login from 'components/login/login'
-import Panel from 'components/app/panel/panel'
+import Panel from 'components/panel/panel'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
 

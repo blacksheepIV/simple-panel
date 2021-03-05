@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { FunctionComponent } from 'react'
 import { useForm } from 'react-hook-form'
 import 'components/login/login.scss'
 
@@ -7,7 +7,7 @@ import 'components/login/login.scss'
 //   password: string
 // }
   
-const Login : React.FunctionComponent = function (){
+const Login : FunctionComponent = function (){
 
   const { register, handleSubmit, errors } = useForm()
   function authenticate(data : React.FormEvent){
