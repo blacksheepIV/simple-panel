@@ -7,7 +7,7 @@ import 'components/login/login.scss'
 //   password: string
 // }
   
-const Login = function (){
+const Login : React.FunctionComponent = function (){
 
   const { register, handleSubmit, errors } = useForm()
   function authenticate(data : React.FormEvent){
