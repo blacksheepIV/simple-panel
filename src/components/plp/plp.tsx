@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import Loading from 'components/loading/loading'
+import Header from 'components/header/header'
 import PostCard from 'components/post-card/post-card'
 import { PostType } from 'utils/interfaces/post-interface'
 import 'components/plp/plp.scss'
@@ -53,17 +54,24 @@ const PostsListingPage : React.FunctionComponent = ()=>{
   return (
     <>
       {loading && <div className="loading__wrapper"><Loading /></div>}
-      {!loading && (rows.map((row, index)=>{
-        const id = index * 10 + 1000
-        return (
-          <div className="plp__row" key={id}>
-            {row.map((item, i)=>{
-              const key = i * id + 1
-              return (<PostCard post={item} key={key} className="plp__userCard" />)
-            })}
-          </div>)
-      }))}
-      
+      {!loading && (
+      <div className="plp">
+        <Header />
+        <div className="plp__content">
+          {rows.map((row, index)=>{
+            const id = index * 10 + 1000
+            return (
+              <div className="plp__row" key={id}>
+                {row.map((item, i)=>{
+                  const key = i * id + 1
+                  return (<PostCard post={item} key={key} className="plp__userCard" />)
+                })}
+              </div>
+            )
+          })}
+        </div>
+      </div>
+      )}
     </>
   )
 }

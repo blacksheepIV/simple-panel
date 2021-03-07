@@ -1,19 +1,34 @@
-import React, { FunctionComponent } from 'react'
+import React, { FunctionComponent, useContext, useEffect } from 'react'
 import { useForm } from 'react-hook-form'
+import UserContext from 'contexts/user-context'
+import { useHistory } from 'react-router-dom'
 import 'components/login/login.scss'
 
-// type Inputs = {
-//   username: string,
-//   password: string
-// }
+type FormDataType = {
+  username: string,
+  password: string
+}
   
 const Login : FunctionComponent = function (){
-
+  const history = useHistory()
+  const userContext = useContext(UserContext)
   const { register, handleSubmit, errors } = useForm()
-  function authenticate(data : React.FormEvent){
+  function authenticate(data : FormDataType){
     
     console.log(data)
+    if (data.username === 'legamart' && data.password === 'legamart'){
+      userContext.login(data)
+    } else {
+      alert('either username or password is not correct!')
+    }
+       
   }
+  useEffect(()=>{
+    
+    if (userContext.isAuthenticated)
+      history.push('/panel')
+  }, [])
+
   return (
 
     <div className="login">

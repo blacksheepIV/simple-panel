@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import Header from 'components/header/header'
 import UserCard from 'components/user-card/user-card'
 import Loading from 'components/loading/loading'
 import UserType from 'utils/interfaces/user-interface'
@@ -52,16 +53,24 @@ const Panel : React.FunctionComponent = ()=>{
   return (
     <>
       {loading && <div className="loading__wrapper"><Loading /></div>}
-      {!loading && (rows.map((row, index)=>{
-        const id = index * 10 + 1000
-        return (
-          <div className="panel__row" key={id}>
-            {row.map((item, i)=>{
-              const key = i * id + 1
-              return (<UserCard user={item} key={key} className="panel__userCard" />)
+      {!loading && (
+        <div className="panel">
+          <Header />
+          <div className="panel__content">
+            {rows.map((row, index)=>{
+              const id = index * 10 + 1000
+              return (
+                <div className="panel__row" key={id}>
+                  {row.map((item, i)=>{
+                    const key = i * id + 1
+                    return (<UserCard user={item} key={key} className="panel__userCard" />)
+                  })}
+                </div>
+              )
             })}
-          </div>)
-      }))}
+          </div>
+        </div>
+      )}
       
     </>
   )

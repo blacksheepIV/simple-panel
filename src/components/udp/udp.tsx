@@ -1,6 +1,7 @@
 import React, { FunctionComponent, useEffect, useState } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import Loading from 'components/loading/loading'
+import Header from 'components/header/header'
 import { IoIosGlobe, IoLogoGithub, IoLogoTwitter, IoLogoInstagram, IoLogoFacebook } from 'react-icons/io'
 import UserType from 'utils/interfaces/user-interface'
 import 'components/udp/udp.scss'
@@ -67,7 +68,7 @@ const UserDetailPage: FunctionComponent = ()=>{
       {loading && <div className="loading__wrapper"><Loading /></div>}
       {!loading && 
       <div className="udp">
-
+        <Header />
         <div className="udp__breadcrumb">
           <li className="udp__breadcrumb--item">
             <Link to="/">Home</Link>
