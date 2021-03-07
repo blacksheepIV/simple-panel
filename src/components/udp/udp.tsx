@@ -127,7 +127,7 @@ const UserDetailPage: FunctionComponent = ()=>{
           </div>
           <div className="udp__userInfo">
             <span className="bold">Posts</span>
-            <Link to="/posts/1">See all of {user.username}'s posts</Link>
+            <Link to={`/posts/${userId}`}>See all of {user.username}'s posts</Link>
           </div>
         </div>
       </div>
