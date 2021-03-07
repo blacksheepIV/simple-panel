@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import UserCard from 'components/user-card/user-card'
+import Loading from 'components/loading/loading'
 import UserType from 'utils/interfaces/user-interface'
 import 'components/panel/panel.scss'
 import axios from 'axios'
@@ -50,8 +51,8 @@ const Panel : React.FunctionComponent = ()=>{
   }, [users])
   return (
     <>
-      <h2>Panel</h2>
-      {rows.map((row, index)=>{
+      {loading && <div className="loading__wrapper"><Loading /></div>}
+      {!loading && (rows.map((row, index)=>{
         const id = index * 10 + 1000
         return (
           <div className="panel__row" key={id}>
@@ -60,7 +61,7 @@ const Panel : React.FunctionComponent = ()=>{
               return (<UserCard user={item} key={key} className="panel__userCard" />)
             })}
           </div>)
-      })}
+      }))}
       
     </>
   )

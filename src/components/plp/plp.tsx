@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
-// import UserCard from 'components/user-card/user-card'
+import Loading from 'components/loading/loading'
 import PostCard from 'components/post-card/post-card'
 import { PostType } from 'utils/interfaces/post-interface'
 import 'components/plp/plp.scss'
@@ -52,16 +52,17 @@ const PostsListingPage : React.FunctionComponent = ()=>{
   }, [posts, userId])
   return (
     <>
-      {rows.map((row, index)=>{
+      {loading && <div className="loading__wrapper"><Loading /></div>}
+      {!loading && (rows.map((row, index)=>{
         const id = index * 10 + 1000
         return (
-          <div className="panel__row" key={id}>
+          <div className="plp__row" key={id}>
             {row.map((item, i)=>{
               const key = i * id + 1
-              return (<PostCard post={item} key={key} className="panel__userCard" />)
+              return (<PostCard post={item} key={key} className="plp__userCard" />)
             })}
           </div>)
-      })}
+      }))}
       
     </>
   )

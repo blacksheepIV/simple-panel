@@ -1,0 +1,10 @@
+.plp {
+  &__row {
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  &__userCard {
+    margin-bottom: 40px;
+  }
+}
