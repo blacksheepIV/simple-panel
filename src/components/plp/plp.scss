@@ -1,0 +1,16 @@
+@import '~assets/style/variables.scss';
+
+.plp {
+  &__content {
+    padding-top: $header-height + 15px;
+  }
+
+  &__row {
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  &__userCard {
+    margin-bottom: 40px;
+  }
+}

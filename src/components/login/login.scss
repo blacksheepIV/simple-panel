@@ -1,9 +1,10 @@
-@import '~components/assets/style/variables.scss';
+@import '~assets/style/variables.scss';
 
 .login {
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 100%;
 
   &__form {
     width: 360px;

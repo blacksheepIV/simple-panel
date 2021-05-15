@@ -1,0 +1,68 @@
+@import '~assets/style/variables.scss';
+
+.userCard {
+  width: 400px;
+  border-radius: 0 0 2px 2px;
+  -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  border-bottom: 2px solid darken($outrageousOrange, 10%);
+  display: inline-block;
+
+  &__header {
+    width: 100%;
+    height: 350px;
+  }
+
+  &__content {
+    padding-top: 25px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__heading {
+    color: $outrageousOrange;
+    text-align: center;
+    font: {
+      size: 18px;
+      weight: bold;
+    }
+  }
+
+  &__heading--sub {
+    text-align: center;
+    font: {
+      size: 14px;
+      weight: 200;
+    }
+  }
+
+  &__extraInfo {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 20px 0;
+    font: {
+      size: 14px;
+      weight: 200;
+    }
+  }
+
+  &__icon {
+    color: $outrageousOrange;
+    margin: 2px 1px 0 0;
+  }
+
+  &__btn {
+    border: none;
+    outline: none;
+    color: $outrageousOrange;
+    font-weight: 700;
+    font-size: 14px;
+    background: transparent;
+    cursor: pointer;
+    margin: 20px 0 10px 0;
+  }
+
+  &:hover {
+    opacity: 50%;
+  }
+}

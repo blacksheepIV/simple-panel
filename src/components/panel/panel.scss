@@ -1,0 +1,18 @@
+@import '~assets/style/variables.scss';
+
+.panel {
+  position: relative;
+
+  &__content {
+    padding-top: $header-height + 15px;
+  }
+
+  &__row {
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  &__userCard {
+    margin-bottom: 40px;
+  }
+}
